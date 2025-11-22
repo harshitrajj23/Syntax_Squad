@@ -6,6 +6,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    appDir: true, // required if using /app directory
+  },
 }
 
-export default nextConfig
+module.exports = nextConfig;

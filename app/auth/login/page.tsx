@@ -13,9 +13,13 @@ import { supabase } from "@/lib/supabaseClient"
 
 export default function LoginPage() {
   const router = useRouter()
-  const searchParams = useSearchParams()
+  const [nextParam, setNextParam] = useState("/dashboard");
 
-  const nextParam = searchParams?.get("next") ?? "/dashboard"
+useEffect(() => {
+  const params = useSearchParams();
+  const next = params?.get("next") ?? "/dashboard";
+  setNextParam(next);
+}, []);
 
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)

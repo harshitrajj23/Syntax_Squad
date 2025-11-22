@@ -1,13 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true, // optional, allows building even if TS has type errors
   },
   images: {
-    unoptimized: true,
-  },
-  experimental: {
-    appDir: true, // required if using /app directory
+    unoptimized: true, // disables image optimization (useful if you don’t need Next.js Image optimization)
   },
 }
 
